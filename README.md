@@ -47,3 +47,13 @@ So now we can use the todos state by passing it as todos prop.
 #### mapDispatchToProps
 This function works similar way to mapStateToProps, in the properties of the object to be returned will be passed to our component as props.
 The difference is, it takes dispatch as argument. Dispatch is a function that allows our components to trigger actions that our Redux store will respond to.
+
+### Redux Persist
+
+https://github.com/rt2zz/redux-persist
+
+`npm i redux-persist`
+
+Persist and rehydrate a Redux store.
+
+While persisting a Redux store is most often a very helpful thing, during development it can sometimes lead to permacrash, where the state is screwed up with relation to our app and our app keeps crashing because of some error. If this happens, delete the persisted data from local storage or wherever else you are storing it.
