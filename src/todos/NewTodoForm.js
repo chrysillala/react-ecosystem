@@ -4,7 +4,7 @@ import './NewTodoForm.css';
 import { createTodo } from './actions';
 
 const NewTodoForm = ({ todos, onCreatePressed }) => {
-  const { inputValue, setInputValue } = useState('');
+  const [inputValue, setInputValue] = useState('');
   return (
     <div className="new-todo-form">
       <input className="new-todo-input"
