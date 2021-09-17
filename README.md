@@ -30,3 +30,8 @@ A function that takes extra info as an argument and returns an action object wit
 
 It abstracts away all the actual code for the actions.
 It's much easier and less error prone than explicitly code out action objects. And for this reason, in React Redux app we work almost exclusively with action creators instead of using bare actions, even when a given action doesn't even have a payload.
+
+### Reducers
+Reducers take the current state and action that was triggered and decide what changes should occur in the state as the result of this action then return the updated state and Redux will take this returned value and set current state to that.
+
+By default, it should return the unchanged state because our reducer will get called whenever any action gets triggered in our application. If our switch block make it to the default case, that means the action that was triggered wasn't one that we're really concerned with, so we should simply return the state as is.
