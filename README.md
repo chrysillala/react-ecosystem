@@ -57,3 +57,8 @@ https://github.com/rt2zz/redux-persist
 Persist and rehydrate a Redux store.
 
 While persisting a Redux store is most often a very helpful thing, during development it can sometimes lead to permacrash, where the state is screwed up with relation to our app and our app keeps crashing because of some error. If this happens, delete the persisted data from local storage or wherever else you are storing it.
+
+### Redux Best Practices
+1. Export the connected and unconnected versions of a component. The connected version is usually what the rest of the app will want to use, but when testing, it will make your life easier if you can simply test your component as is without having to create and set up a fake store. Your test shouldn't care whether your component is connected or not.
+1. Keep Redux actions and async operations out of your reducers.
+1. Think carefully about connecting components. Connecting a component can, in practice, make it less reusable. We should avoid connecting components to the store if we plan on reusing them with different data. Instead, we should have some kind of parent component that's connected to the store and pass the correct data to these reusable components.
