@@ -24,3 +24,9 @@ Components can only interact with the state by triggering redux actions
 - store: one central, global state
 - actions {type, payload}: explicitly define the different events that can occur in our app
 - reducers: specifying what should happen to Redux store, when a given action occurs
+
+### Action Creators
+A function that takes extra info as an argument and returns an action object with this info as the payload.
+
+It abstracts away all the actual code for the actions.
+It's much easier and less error prone than explicitly code out action objects. And for this reason, in React Redux app we work almost exclusively with action creators instead of using bare actions, even when a given action doesn't even have a payload.
