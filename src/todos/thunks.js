@@ -1,4 +1,11 @@
-import { loadTodoInProgress, loadTodoSuccess, loadTodoFailure, createTodo, removeTodo } from './actions';
+import {
+  loadTodoInProgress,
+  loadTodoSuccess,
+  loadTodoFailure,
+  createTodo,
+  removeTodo,
+  markTodoAsCompleted
+} from './actions';
 
 export const loadTodos = () => async (dispatch, getState) => {
   // when loadTodos thunk is triggered, we want to dispatch loadTodoInProgress action
@@ -45,6 +52,19 @@ export const removeTodoRequest = (id) => async dispatch => {
   } catch (error) {
     dispatch(displayAlert(error));
   }
+}
+
+export const markTodoAsCompletedRequest = (id) => async dispatch => {
+  try {
+    const response = await fetch(`http://localhost:8080/todos/${id}/completed`, {
+      method: 'POST',
+    });
+    const updatedTodo = await response.json();
+    dispatch(markTodoAsCompleted(updatedTodo));
+  } catch (error) {
+    dispatch(displayAlert(error));
+  }
+
 }
 
 export const displayAlert = text => () => {
