@@ -2,7 +2,6 @@ import React from 'react';
 import TodoListItem from './TodoListItem';
 import './TodoList.css';
 import NewTodoForm from './NewTodoForm';
-import SimpleThunkButton from './SimpleThunkButton';
 import { connect } from 'react-redux';
 import { markTodoAsCompleted, removeTodo } from './actions';
 
@@ -16,7 +15,6 @@ const TodoList = ({ todos = [], onRemovePressed, onCompletedPressed }) => (
         onRemovePressed={onRemovePressed}
         onCompletedPressed={onCompletedPressed}
       />)}
-    <SimpleThunkButton />
   </div>
 )
 
