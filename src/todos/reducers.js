@@ -32,8 +32,8 @@ export const todos = (state = [], action) => {
     }
 
     case REMOVE_TODO: {
-      const { text } = payload;
-      return state.filter(todo => todo.text !== text);
+      const { todo: todoToRemove } = payload; // rename `todo` to `todoToRemove`
+      return state.filter(todo => todo.id !== todoToRemove.id);
     }
 
     case MARK_TODO_AS_COMPLETED: {
