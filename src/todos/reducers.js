@@ -51,9 +51,17 @@ export const todos = (state = [], action) => {
       });
     }
 
+    case LOAD_TODOS_SUCCESS: {
+      // update todos state with the todos data from payload
+      const { todos } = payload;
+      return todos;
+    }
+
     // remember to return the unchanged state if our reducer doesn't make any changes
     // since otherwise it'll look like our reducer is returning undefined
     // and it will throw an error
+    case LOAD_TODOS_IN_PROGRESS:
+    case LOAD_TODOS_FAILURE:
     default:
       return state;
   }
