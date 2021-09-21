@@ -91,3 +91,9 @@ Thunk middleware for Redux. A side-effect libraries, which aims to give us a pla
 - `redux-devtools-extension` : to add Thunk middleware to our Redux store in a nice, neat way
 - `@babel/runtime` : to make our asynchronous Thunk works
 - `@babel/plugin-transform-runtime` : the development version of `@babel/runtime`
+
+### Selectors
+
+Selectors give us a place to put logic for combining, filtering, transforming stored data. Selectors work as part of something big, for better code separation.
+
+This app will use selectors instead of just referring directly to how data is stored in the state. This allows us to modify the structure of our data in Redux store without disturbing our components whatsoever.
