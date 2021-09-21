@@ -97,3 +97,18 @@ Thunk middleware for Redux. A side-effect libraries, which aims to give us a pla
 Selectors give us a place to put logic for combining, filtering, transforming stored data. Selectors work as part of something big, for better code separation.
 
 This app will use selectors instead of just referring directly to how data is stored in the state. This allows us to modify the structure of our data in Redux store without disturbing our components whatsoever.
+
+#### Selectors Purpose
+
+1. Selectors can help our components be independent of the exact structure of data in our Redux store
+1. To give us a place to put the logic necessary for transforming bare Redux data into more specific data that our comopnents might need
+
+Back to the app, we want to improve our app by displaying two separate list, one for completed todos and one for todos that we haven't completed yet. To solve this problem, we will create another selectors to get filtered todos.
+
+#### Reselect
+
+https://github.com/reduxjs/reselect
+
+`npm i reselect`
+
+A tool to build more complex logic on top of simpler selectors and even combine different selectors.
