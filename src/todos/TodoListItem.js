@@ -1,9 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// 8640000 == 1 day in miliseconds
+// we want to display red border bottom if todo item is older than 5 days (8640000 * 5)
 const TodoItemContainer = styled.div`
   background: #fff;
   border-radius: 8px;
+  border-bottom: ${props => (new Date(props.createdAt) > new Date(Date.now() - 8640000 * 5)
+    ? 'none'
+    : '2px solid red')};
   margin-top: 8px;
   padding: 16px;
   position: relative;
@@ -40,8 +45,11 @@ const RemoveButton = styled.button`
 `;
 
 const TodoListItem = ({ todo, onRemovePressed, onCompletedPressed }) => (
-  <TodoItemContainer>
+  <TodoItemContainer createdAt={todo.createdAt}>
     <h3>{todo.text}</h3>
+    <p>Created at:&nbsp;
+      {(new Date(todo.createdAt)).toLocaleDateString()}
+    </p>
     <ButtonsContainer>
       {todo.isCompleted
         ? null
