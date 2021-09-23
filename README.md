@@ -112,3 +112,16 @@ https://github.com/reduxjs/reselect
 `npm i reselect`
 
 A tool to build more complex logic on top of simpler selectors and even combine different selectors.
+
+## Styled-Components
+
+https://styled-components.com/
+
+`npm i styled-components`
+
+Concern when using CSS modules:
+
+1. Having extra css files for every component clutters up the directory structure
+1. Different variants of styles will be hard to maintain
+
+By using styled-components, it allows us to define styles inside our JS files, this term is called css-in-js. It moves all the styling logic out of main component and into a part of our code where sole job is to handle that kind of logic.
