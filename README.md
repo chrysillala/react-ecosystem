@@ -153,3 +153,13 @@ We simply have to define a current state and an action, pass those two arguments
 
 1. Thunk should dispatches the correct action at the right times
 1. Thunk should make the correct external requests
+
+### Testing Selectors
+
+As our app gets bigger, we might want to pass the result of another selector to different selector but the only thing we need to test is the last function that we passed to `createSelector`
+
+Because we are using Reselect, it has `resultFunc()` which is a reference to the last function that we passed to createSelector, we can use this in our tests to pass in whatever previous selector results that our selectors required, then we can pass the fake state.
+
+#### What we want to make sure when testing Selectors
+
+Define what data should be returned by the smallest selectors that our current selector relies on, and then use the `resultFunc` to pass that data arguments into the final function we pass to our selectors.
