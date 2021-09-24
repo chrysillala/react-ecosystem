@@ -2,6 +2,11 @@
 
 Linkedin Learning Course by Shaun Wassell
 
+## How to start this app
+1. Run `npm run dev` to start the app
+1. Clone the [server repo](https://github.com/chrysillala/react-ecosystems-server), run `npm start` to start the server
+1. To run all tests, you can use this command `npm run test`
+
 ## Install React from scratch
 
 1. `npm init -y`
