@@ -125,3 +125,31 @@ Concern when using CSS modules:
 1. Different variants of styles will be hard to maintain
 
 By using styled-components, it allows us to define styles inside our JS files, this term is called css-in-js. It moves all the styling logic out of main component and into a part of our code where sole job is to handle that kind of logic.
+
+## Testing
+
+`npm i -D mocha chai` : dependencies for testing
+`npm i -D @babel/register` : to make our tests can run modern babel code
+
+### Testing Reducers
+
+Testing Reducers is very important in React Redux app because they control the central state of our app, so it's pretty vital for them to work correctly under all normal circumstances.
+
+#### What we want to make sure when testing Reducers
+
+Reducers are pure function, which means they have no internal state for us to set up.
+
+We simply have to define a current state and an action, pass those two arguments to our reducer to see if returns what we expected.
+
+### Testing Redux thunks
+
+`npm i -D sinon node-fetch fetch-mock`
+
+`sinon` : to create a fake function that we can pass in, that keeps track of what arguments it was called with
+
+`node-fetch fetch-mock` : for testing purposes we don't want to send real requests to the server. especially when we write test for adding or deleting datas from the server. So we need to replace our fetch with fake fetch that behaves like real fetch.
+
+#### What we want to make sure when testing Thunks
+
+1. Thunk should dispatches the correct action at the right times
+1. Thunk should make the correct external requests
