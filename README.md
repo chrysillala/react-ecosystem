@@ -1,5 +1,7 @@
 # Build Modern Projects with React
 
+Linkedin Learning Course by Shaun Wassell
+
 ## Install React from scratch
 
 1. `npm init -y`
@@ -163,3 +165,11 @@ Because we are using Reselect, it has `resultFunc()` which is a reference to the
 #### What we want to make sure when testing Selectors
 
 Define what data should be returned by the smallest selectors that our current selector relies on, and then use the `resultFunc` to pass that data arguments into the final function we pass to our selectors.
+
+### Testing Styled-Components
+
+We don't exactly test our full styled-components.
+
+#### What we want to make sure when testing Styled-Components
+
+The only thing we can really test in our styled components is the logic we put inside them. To test effectively, we might want to pull the UI logic into its own function.
