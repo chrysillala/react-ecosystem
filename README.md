@@ -178,3 +178,10 @@ We don't exactly test our full styled-components.
 #### What we want to make sure when testing Styled-Components
 
 The only thing we can really test in our styled components is the logic we put inside them. To test effectively, we might want to pull the UI logic into its own function and test that.
+
+
+## Server
+
+https://github.com/chrysillala/react-ecosystems-server
+
+Simple server for react-ecosystem repo
